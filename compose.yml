@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  server:
+    image: ubuntu-ssh-server:v1
+    container_name: ubuntu-ssh
+    build:
+      context: .
+      args:
+        USERNAME: ${USERNAME}
+        PASSWORD: ${PASSWORD}
+        UID: ${UID}
+        GID: ${GID}
+    hostname: docker-server
+    
